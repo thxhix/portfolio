@@ -1,0 +1,210 @@
+.aside-main-menu .menu {
+    &.minify {
+        padding-left: 10px;
+        max-width: 80px;
+
+        border-right: 1px solid var(--gray-200);
+
+        .menu__switcher {
+            padding-right: 8px;
+
+            .switcher__icon {
+                margin-right: 0;
+            }
+            .text {
+                white-space: nowrap;
+
+                max-width: 0px;
+
+                opacity: 0;
+            }
+            .arrow {
+                overflow: hidden;
+                max-width: 0px;
+                max-height: 0px;
+                padding: 0;
+            }
+        }
+        .menu-list__item {
+            // justify-content: center;
+
+            &.active {
+                .hover-title {
+                    opacity: 0;
+                }
+                &:hover {
+                    .hover-title {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            .hover-title {
+                font-size: var(--text-11);
+                line-height: var(--lh-14);
+                font-weight: var(--fw-400);
+
+                width: max-content;
+                left: 50px;
+            }
+
+            &:hover {
+                .hover-title {
+                    z-index: 6;
+                    opacity: 1;
+                    left: 50px;
+                }
+            }
+
+            .text {
+                .title {
+                    opacity: 0;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    max-width: 0px;
+                }
+                .icon {
+                    transform: translateX(8px);
+                }
+            }
+            .counter {
+                max-width: 0;
+                max-height: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        }
+
+        .menu__minify {
+            .minify {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .menu-list__item {
+            &:hover {
+                background-color: transparent;
+            }
+
+            &.active {
+                position: relative;
+                background-color: transparent;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+
+                    height: 100%;
+                    width: 3px;
+
+                    border-radius: 10px;
+
+                    right: -10px;
+                    top: 0;
+
+                    background-color: var(--gray-600);
+                }
+            }
+        }
+        &.menu--client,
+        &.menu--executor {
+            .menu-list__item {
+                &.active {
+                    &:hover {
+                        background-color: transparent;
+                    }
+                    &::after {
+                        background-color: var(--blue-400);
+                    }
+                }
+            }
+        }
+
+        &.menu--applicant,
+        &.menu--employer {
+            .menu-list__item {
+                &.active {
+                    &:hover {
+                        background-color: transparent;
+                    }
+                    &::after {
+                        background-color: var(--orange-600);
+                    }
+                }
+            }
+        }
+
+        &.menu--buyer,
+        &.menu--seller {
+            .menu-list__item {
+                &.active {
+                    &:hover {
+                        background-color: transparent;
+                    }
+                    &::after {
+                        background-color: var(--red-300);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.aside-main-menu .menu,
+.menu__switcher {
+    transition: 0.25s cubic-bezier(0.33, 0.89, 0.36, 1);
+
+    .switcher__icon,
+    .text,
+    .text .title,
+    .text .subtitle {
+        transition: width 0.25s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.25s cubic-bezier(0.33, 0.89, 0.36, 1);
+    }
+}
+
+.menu-list__item,
+.arrow {
+    transition: transform 0.15s ease-in-out, background 0.15s ease-in-out, width 0.25s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.25s cubic-bezier(0.33, 0.89, 0.36, 1) !important;
+
+    .text {
+        .title,
+        .icon {
+            transition: all 0.25s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.25s cubic-bezier(0.33, 0.89, 0.36, 1);
+        }
+    }
+    .counter {
+        transition: width 0.25s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.25s cubic-bezier(0.33, 0.89, 0.36, 1);
+    }
+}
+
+.minify {
+    transition: 0.2s cubic-bezier(0.33, 0.89, 0.36, 1);
+
+    .menu__switcher {
+        transition: 0.2s cubic-bezier(0.33, 0.89, 0.36, 1);
+
+        .switcher__icon,
+        .text,
+        .text .title,
+        .text .subtitle {
+            transition: width 0.2s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.2s cubic-bezier(0.33, 0.89, 0.36, 1);
+        }
+    }
+
+    .menu-list__item,
+    .arrow {
+        transition: background 0.15s ease-in-out, width 0.2s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.2s cubic-bezier(0.33, 0.89, 0.36, 1) !important;
+
+        .text {
+            .title,
+            .icon {
+                transition: all 0.2s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.2s cubic-bezier(0.33, 0.89, 0.36, 1);
+            }
+        }
+        .counter {
+            transition: width 0.2s cubic-bezier(0.33, 0.89, 0.36, 1), opacity 0.2s cubic-bezier(0.33, 0.89, 0.36, 1);
+        }
+    }
+}

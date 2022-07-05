@@ -1,0 +1,31 @@
+.chose {
+    &__header {
+        margin-bottom: 16px;
+
+        .title {
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+        .available {
+            color: var(--gray-850);
+        }
+    }
+
+    &__item {
+        padding: 12px 0;
+
+        border-bottom: 1px solid var(--gray-200);
+
+        .title {
+            color: var(--gray-700);
+            margin-bottom: 4px;
+        }
+        .value {
+            color: var(--gray-900);
+        }
+    }
+
+    &__current {
+        margin-top: 16px;
+    }
+}

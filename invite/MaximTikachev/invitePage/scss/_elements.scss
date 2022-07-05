@@ -1,0 +1,148 @@
+.message {
+    opacity: 1;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    padding: 16px;
+    background-color: var(--gray-150);
+    border-radius: 6px;
+
+    transition: all 0.15s ease-in-out;
+
+    &.closed {
+        overflow: hidden;
+        opacity: 0;
+        max-height: 0;
+        padding: 0;
+    }
+
+    &__text {
+        padding-left: 36px;
+        color: var(--gray-1000);
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .message__close {
+                cursor: pointer;
+
+                max-width: 24px;
+                min-width: 24px;
+                height: 24px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .title {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -36px;
+
+                    width: 20px;
+                    height: 20px;
+
+                    transform: translate(0%, -50%);
+                }
+            }
+        }
+    }
+
+    &--warn {
+        background-color: var(--orange-200);
+        .message__close {
+            path {
+                stroke: var(--orange-600);
+            }
+        }
+        .message__text {
+            .title {
+                &::after {
+                    background: url(../img/message/status__warn.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}
+
+.button {
+    cursor: pointer;
+
+    display: inline-block;
+    text-align: center;
+
+    padding: 0px 26px;
+    border-radius: 6px;
+
+    min-width: 210px;
+    height: 36px;
+    line-height: 35px;
+
+    background-color: inherit;
+    border: 1px solid inherit;
+
+    transition: 0.1s ease-in-out;
+
+    &--orange {
+        border: 1px solid var(--orange-600);
+        color: var(--orange-600);
+
+        &:hover {
+            border: 1px solid var(--orange-700);
+            color: var(--orange-700);
+        }
+        &:active {
+            border: 1px solid var(--orange-800);
+            color: var(--orange-800);
+        }
+        &-filled {
+            color: var(--white);
+            background-color: var(--orange-600);
+
+            &:hover {
+                background-color: var(--orange-700);
+            }
+            &:active {
+                background-color: var(--orange-800);
+            }
+        }
+    }
+
+    &--red {
+        border: 1px solid var(--red-300);
+        color: var(--red-300);
+
+        &:hover {
+            border: 1px solid var(--red-400);
+            color: var(--red-400);
+        }
+        &:active {
+            border: 1px solid var(--red-500);
+            color: var(--red-500);
+        }
+        &-filled {
+            color: var(--white);
+            background-color: var(--red-300);
+
+            &:hover {
+                background-color: var(--red-400);
+            }
+            &:active {
+                background-color: var(--red-500);
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@import "_nullstyles.scss";
+
+header {
+    height: 107px;
+    width: 100%;
+    display: block;
+    background: #eef2f4;
+    margin-bottom: 32px;
+}
+body {
+    background-color: #fff;
+    height: 3000px;
+}
+
+.wrapper {
+    height: 100%;
+}
+.container {
+    max-width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+.sidebar {
+    width: 274px;
+    height: 100vh;
+    background-color: var(--gray-200);
+}
+
+.block-wrap-all {
+    @import "_body.scss";
+    @import "_status.scss";
+    @import "_elements.scss";
+    @import "_response.scss";
+    @import "_chose-date.scss";
+    @import "_calendar.scss";
+    @import "_actions.scss";
+}
+
+@import "_modal.scss";

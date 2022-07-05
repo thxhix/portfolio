@@ -1,0 +1,43 @@
+.status {
+    &-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__date {
+            color: var(--gray-850);
+        }
+        &__current {
+            color: blueviolet;
+        }
+    }
+
+    .message {
+        margin-top: 16px;
+        &.closed {
+            margin-top: 0;
+        }
+    }
+
+    &--invited {
+        .status-row__current {
+            position: relative;
+            color: var(--blue-600);
+            &::after {
+                content: "";
+                position: absolute;
+
+                left: -14px;
+                top: 50%;
+
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+
+                transform: translate(0%, -50%);
+
+                background-color: var(--blue-600);
+            }
+        }
+    }
+}

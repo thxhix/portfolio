@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Page</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../../common/variables.css" />
+        <link rel="stylesheet" href="../../common/components.css" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <header></header>
+
+        <div class="mtModal-overlay"></div>
+        <div class="mtModal mtModal-decline" data-modal="decline">
+            <div class="mtModal__inner">
+                <div class="mtModal-title text-s18-h24-w500">
+                    Укажите причину Вашего отказа
+                </div>
+
+                <form class="mtModal-form">
+                    <div class="mtModal-form__item text-s14-h20-w400">
+                        <label class="input-radio">
+                            <input name="decline-reason" type="radio" class="input-radio__input" checked />
+
+                            <span class="input-radio__custom">
+                                <div class="checkbox"></div>
+                                <div class="title">Нашёл другую работу</div>
+                            </span>
+                        </label>
+                    </div>
+                    <!--  -->
+
+                    <div class="mtModal-form__item text-s14-h20-w400">
+                        <label class="input-radio">
+                            <input name="decline-reason" type="radio" class="input-radio__input" />
+
+                            <span class="input-radio__custom">
+                                <div class="checkbox"></div>
+                                <div class="title">Не подходят условия</div>
+                            </span>
+                        </label>
+                    </div>
+                    <!--  -->
+                    <div class="mtModal-form__item text-s14-h20-w400">
+                        <label class="input-radio">
+                            <input name="decline-reason" type="radio" class="input-radio__input" />
+
+                            <span class="input-radio__custom">
+                                <div class="checkbox"></div>
+                                <div class="title">Далеко</div>
+                            </span>
+                        </label>
+                    </div>
+                    <!--  -->
+                    <div class="mtModal-form__item text-s14-h20-w400" data-value="textarea">
+                        <label class="input-radio">
+                            <input name="decline-reason" type="radio" class="input-radio__input" />
+
+                            <span class="input-radio__custom">
+                                <div class="checkbox"></div>
+                                <div class="title">Другое</div>
+                            </span>
+                        </label>
+                    </div>
+                    <!-- Textarea -->
+                    <div class="mtModal-form__item--textarea text-s14-h20-w400">
+                        <textarea name="decline-reason" placeholder="Опишите причину"></textarea>
+                    </div>
+                </form>
+
+                <div class="mtModal-actions text-s14-h20-w500">
+                    <button class="mtModal-actions__item mtModal-actions__close">Отмена</button>
+                    <button class="mtModal-actions__item mtModal-actions__action">Отказаться</button>
+                </div>
+            </div>
+        </div>
+
+        <main class="wrapper">
+            <div class="container">
+                <aside class="sidebar text-s24-h32-w500"></aside>
+
+                <div class="block-wrap-all">
+                    <section class="body">
+                        <div class="body__header">
+                            <div class="header-title">
+                                <a href="#" onclick="history.back()" class="header-title__back">
+                                    <img src="img/header__arrow.svg" alt="" />
+                                </a>
+                                <div class="header-title__icon">
+                                    <img src="img/header__icon.svg" alt="" />
+                                </div>
+                                <div class="header-title__main">
+                                    <div class="title text-s16-h22-w500">Видеособеседование</div>
+                                    <div class="subtitle text-s12-h14-w400">Приглашение на собеседование онлайн</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+                        <section class="body__content">
+                            <div class="status status--invited">
+                                <div class="status-row text-s13-h16-w400">
+                                    <div class="status-row__date">Вы откликались <span id="status-date">14 октября</span></div>
+                                    <div class="status-row__current">Вас пригласили</div>
+                                </div>
+
+                                <div class="message message--warn status-message">
+                                    <div class="message__text">
+                                        <div class="row text-s16-h22-w500">
+                                            <div class="title">Вы ещё не приняли приглашение</div>
+                                            <div class="message__close" title="Закрыть">
+                                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13 1L1 13" stroke="#FFA438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M1 1L13 13" stroke="#FFA438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="text text-s14-h20-w400">
+                                            Вам назначено интервью в формате видеозвонка в нашем мессенджере. Выберите подходящее время из диапазона или согласитесь на определённое время
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="response">
+                                <div class="response__resume">
+                                    <div class="image">
+                                        <img src="https://funart.pro/uploads/posts/2021-12/thumbs/1640284040_2-funart-pro-p-foni-s-kamnyami-2.jpg" alt="" />
+                                    </div>
+                                    <div class="info">
+                                        <div class="title text-s16-h22-w500">Костюмер</div>
+                                        <div class="cost text-s15-h20-w500">125 000 ₽ в месяц</div>
+                                        <div class="other">
+                                            <div class="other__item text-s14-h20-w400">ООО Импорт Хоумм</div>
+                                            <div class="other__item text-s14-h20-w400">Москва, улица Садовая, дом 23, офис 230</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="response__message">
+                                    <div class="text text-s14-h20-w400">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consectetur totam autem iure nesciunt? Hic, nobis ea excepturi reiciendis debitis ipsa at beatae neque rem illum dignissimos modi ipsam alias consectetur non suscipit facilis. Est omnis obcaecati veniam laboriosam ipsa officia numquam, itaque nisi repudiandae, cumque delectus quae? Porro, animi tempore! Alias est iusto rerum eligendi, illo, excepturi rem unde minima ad minus et nesciunt commodi tempore adipisci laudantium veritatis voluptatibus quibusdam ipsum molestias ullam eius. Recusandae numquam quo accusantium cum, ipsam architecto esse quos aut similique aliquam sed soluta veritatis odio voluptatibus. Recusandae maiores nemo velit delectus! Beatae voluptate debitis aperiam aliquid ratione iusto porro voluptas id necessitatibus, dignissimos natus dolor repellendus possimus perferendis consectetur ea omnis deserunt. Earum ratione pariatur impedit accusantium odio itaque
+                                            perferendis repudiandae corrupti cumque quia atque voluptatum facilis blanditiis excepturi, eos consequatur repellat voluptatibus voluptas veniam! Inventore perspiciatis commodi ex numquam cupiditate at omnis dolore fuga aperiam, amet dignissimos cumque dicta nihil, fugiat autem, debitis animi harum mollitia. Magni similique dolorem sint voluptas cumque animi suscipit voluptate sed, labore quo. Facere, repudiandae animi, modi voluptates ex soluta magnam rem temporibus corporis sequi recusandae fugit enim illum earum harum, atque eveniet explicabo. Distinctio quia voluptate aperiam repellendus aliquam ab laudantium perspiciatis libero et impedit voluptatibus quibusdam consequuntur explicabo, exercitationem inventore vitae. Debitis quibusdam iure ipsa perspiciatis, ea nobis soluta! Rerum, officia nulla nemo mollitia incidunt dolor, repellendus odio ab impedit amet quam repellat doloribus laborum provident. Voluptas, nulla? Nam voluptatum earum
+                                            deleniti dolorum ducimus qui nostrum voluptatem tempore, eius ad quis, a, dolore obcaecati eos accusamus suscipit. Nobis delectus dolorem ipsa dolor illum veniam voluptatibus neque architecto possimus suscipit. Molestiae veritatis quo earum rerum inventore animi sapiente officiis ratione nemo maxime blanditiis reiciendis, enim magni consectetur accusantium laborum delectus cupiditate, quas odio. Voluptas nostrum in natus consequatur iure accusamus. Quos ipsam alias cum. Voluptatibus praesentium eos asperiores ducimus. Aperiam totam ex asperiores accusantium. Atque distinctio sapiente sint architecto nesciunt magnam, facere hic itaque ipsum at quos, dignissimos maiores. Natus, autem accusantium necessitatibus, cum maiores fuga mollitia amet voluptatum ullam reprehenderit neque nisi ex porro nostrum, hic eos eaque! Minus debitis ea quas? Rerum rem laudantium, est quam neque minus aut corporis dolores. Numquam libero eveniet expedita porro
+                                            dignissimos neque, eius suscipit incidunt autem, quam maxime mollitia consequuntur natus ad necessitatibus ab quos maiores quibusdam et doloremque? Repellendus officiis quod reprehenderit odit, voluptatibus repudiandae expedita consequuntur?
+                                        </p>
+                                    </div>
+
+                                    <div class="row text-s12-h14-w400">
+                                        <div class="toggle message-text__toggle">Развернуть</div>
+                                        <div class="date">14.09.21 в 20:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="chose-date">
+                                <div class="chose-date__header">
+                                    <div class="title text-s22-h24-w500">Выберите подходящий Вам день и время</div>
+                                    <div class="subtitle text-s13-h16-w400">Доступные даты <span id="startIntervalDay"></span> <span id="startIntervalMounth"></span> — <span id="endIntervalDay"></span> <span id="endIntervalMounth"></span></div>
+                                </div>
+
+                                <div class="chose-date__calendar">
+                                    <div class="calendar-wrapper">
+                                        <input type="text" class="calendar-input" />
+                                        <div class="calendar-value">
+                                            <p class="value">
+                                                <span class="icon">
+                                                    <img src="img/calendar/calendar__date.svg" alt="" />
+                                                </span>
+                                                <span>
+                                                    <span id="calendar-value__day"></span>
+                                                    <span id="calendar-value__mounth"></span>
+                                                    <span id="calendar-value__year"></span>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="chose-time">
+                                        <div class="chose-time__input text-s14-h20-w400">
+                                            <span class="icon">
+                                                <img src="img/calendar/calendar__time.svg" alt="" />
+                                            </span>
+                                            <span id="chose-time__value" class="value">
+                                                12:00
+                                            </span>
+                                            <span class="utc">MSK</span>
+                                        </div>
+
+                                        <div class="chose-time__dropdown">
+                                            <div class="chose-time__item text-s14-h20-w400">03:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">03:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">04:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">04:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">05:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">05:30</div>
+                                            <!--  -->
+                                            <div class="chose-time__item text-s14-h20-w400">06:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">06:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">07:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">07:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">08:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">08:30</div>
+                                            <!--  -->
+                                            <div class="chose-time__item text-s14-h20-w400">09:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">09:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">10:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">10:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">11:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">11:30</div>
+                                            <!--  -->
+                                            <div class="chose-time__item text-s14-h20-w400">12:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">12:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">13:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">13:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">14:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">14:30</div>
+                                            <!--  -->
+                                            <div class="chose-time__item text-s14-h20-w400">15:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">15:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">16:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">16:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">17:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">17:30</div>
+                                            <!--  -->
+                                            <div class="chose-time__item text-s14-h20-w400">18:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">18:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">19:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">19:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">20:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">20:30</div>
+                                            <!--  -->
+                                            <div class="chose-time__item text-s14-h20-w400">21:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">21:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">22:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">22:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">23:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">23:30</div>
+                                            <!--  -->
+                                            <div class="chose-time__item text-s14-h20-w400">00:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">00:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">01:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">01:30</div>
+                                            <div class="chose-time__item text-s14-h20-w400">02:00</div>
+                                            <div class="chose-time__item text-s14-h20-w400">02:30</div>
+                                            <!--  -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="chose-date__value text-s14-h20-w400">Вы выбрали <span id="date-value__day"></span> <span id="date-value__mounth"></span>, время начала <span id="date-value__time"></span></div>
+                            </div>
+
+                            <div class="actions">
+                                <a href="#" class="actions__item button button--orange-filled text-s14-h20-w400">Принять приглашение</a>
+                                <a class="actions__item button button--red modal-open__trigger text-s14-h20-w400" data-modal="decline">Отказаться</a>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+        <script src="js/jquery.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <!-- календарь -->
+        <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+        <!-- русский язык для календаря -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

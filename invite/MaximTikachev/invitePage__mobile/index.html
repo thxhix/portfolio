@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Page</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
+        <link rel="stylesheet" href="../../common/variables.css" />
+        <link rel="stylesheet" href="../../common/components.css" />
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <div class="mtModal-overlay"></div>
+
+        <div class="mtModal mtModal-date">
+            <hr class="mtModal__hr" />
+            <div class="mtModal__inner">
+                <div class="head">
+                    <div class="title text-s18-h22-w500">Выберите дату</div>
+                </div>
+                <div class="main">
+                    <div class="calendar">
+                        <input type="text" class="calendar-input" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mtModal mtModal-time">
+            <hr class="mtModal__hr" />
+            <div class="mtModal__inner">
+
+                <div class="head">
+                    <div class="title text-s18-h22-w500">Выберите время</div>
+                    <div class="available-date text-s15-h18-w400">
+                        Дата
+                        <span class="value available-date__bold">
+                            <span id="printValue">
+                                <span class="value__date"></span>
+                                <span class="value__mounth"></span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="timeline"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mtModal mtModal-decline">
+            <hr class="mtModal__hr" />
+            <div class="mtModal__inner">
+                <div class="head">
+                    <div class="title text-s18-h22-w500">Причина отказа</div>
+                </div>
+                <div class="main">
+                    <form action="" class="decline-form">
+                        <div class="decline-form__item text-s13-h16-w400">
+                            <label class="input-radio">
+                                <input name="decline-reason" type="radio" class="input-radio__input" value="Нашёл другую работу" checked />
+                                <span class="input-radio__custom">
+                                    <div class="checkbox"></div>
+                                    <div class="title">Нашёл другую работу</div>
+                                </span>
+                            </label>
+                        </div>
+                        <!--  -->
+                        <div class="decline-form__item text-s13-h16-w400">
+                            <label class="input-radio">
+                                <input name="decline-reason" type="radio" class="input-radio__input" value="Не подходят условия" />
+                                <span class="input-radio__custom">
+                                    <div class="checkbox"></div>
+                                    <div class="title">Не подходят условия</div>
+                                </span>
+                            </label>
+                        </div>
+                        <!--  -->
+                        <div class="decline-form__item text-s13-h16-w400">
+                            <label class="input-radio">
+                                <input name="decline-reason" type="radio" class="input-radio__input" value="Далеко"  />
+                                <span class="input-radio__custom">
+                                    <div class="checkbox"></div>
+                                    <div class="title">Далеко</div>
+                                </span>
+                            </label>
+                        </div>
+                        <!--  -->
+
+                        <!--  -->
+                        <div class="decline-form__item text-s13-h16-w400" data-value="textarea">
+                            <label class="input-radio">
+                                <input name="decline-reason" type="radio" class="input-radio__input" value="Other"  />
+                                <span class="input-radio__custom">
+                                    <div class="checkbox"></div>
+                                    <div class="title">Другое</div>
+                                </span>
+                            </label>
+                        </div>
+                        <!--  -->
+                        <!-- Textarea -->
+                        <div class="mtModal-form__item--textarea text-s13-h16-w400">
+                            <textarea name="decline-reason" placeholder="Опишите причину"></textarea>
+                        </div>
+                    </form>
+
+                    <div class="mtModal-actions text-s14-h20-w500">
+                        <button class="mtModal-actions__item mtModal-actions__close close-decline-modal">Отмена</button>
+                        <button class="mtModal-actions__item mtModal-actions__action">Отказаться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="wrapper">
+            <div class="sticky-actions">
+                <button class="button button--red-stroke open-decline-modal">Отказаться</button>
+                <button class="button button--orange-fill">Подтвердить</button>
+            </div>
+
+            <section class="page-body">
+                <div class="page-body__header">
+                    <div class="container">
+                        <div class="main">
+                            <a class="back" href="#" onclick="history.back">
+                                <img src="img/header__back.svg" alt="" />
+                            </a>
+                            <div class="title text-s20-h24-w500">Видеособеседование</div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="page-body__content">
+                    <div class="container">
+                        <div class="status">
+                            <div class="status__row">
+                                <div class="date text-s12-h14-w400">Вы откликались 14 октября</div>
+                                <div class="current-status current-status--invited text-s12-h14-w500">Вас пригласили</div>
+                            </div>
+                            <div class="status__message">
+                                <div class="icon">
+                                    <img src="img/status/status__warn.svg" alt="" />
+                                </div>
+
+                                <div class="text">
+                                    <div class="title text-s14-h20-w500">Вы ещё не приняли приглашение</div>
+                                    <div class="info text-s12-h16-w400">Вам назначено интервью в формате видеозвонка в нашем мессенджере. Выберите подходящее время из диапазона или согласитесь на определённое время</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="response">
+                            <a href="#" class="response__item">
+                                <div class="title text-s15-h20-w600">Костюмер</div>
+                                <div class="cost text-s15-h18-w400">125 000 ₽ в месяц</div>
+                                <div class="add text-s13-h16-w400">
+                                    <div class="add__item">ООО Импорт Хоумм</div>
+                                    <div class="add__item">Москва</div>
+                                </div>
+
+                                <div class="arrow">
+                                    <img src="img/response__arrow.svg" alt="" />
+                                </div>
+                            </a>
+
+                            <div class="response__message">
+                                <div class="message">
+                                    <div class="message__main">
+                                        <div class="text text-s13-h16-w400">
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quas iure minus aut consequuntur magnam eius sapiente debitis repellendus consequatur eos! Ex totam laboriosam voluptatem quod nisi sit aut architecto nostrum impedit minus similique, harum ea quidem nulla reiciendis. Quam, iure quia ex fuga atque alias cumque voluptates aperiam! Fugiat, vel. Sequi fugiat eos voluptatem libero voluptates vero ullam provident ea. Ex voluptatem aliquid sed nulla ad nam aliquam similique sequi dolores enim saepe ratione repellat dolorem soluta in, possimus sunt quia, eligendi alias, iusto delectus dolor accusantium sint. Totam sed accusamus necessitatibus aliquam quisquam esse, nam eos excepturi neque delectus molestias explicabo expedita aperiam assumenda omnis ut quos nihil exercitationem iste. Tempore maiores, eos modi dicta fugiat distinctio qui necessitatibus maxime illo culpa rem sit minima voluptate quasi accusantium vel eius nam aut
+                                                nostrum in at doloribus consequuntur vitae. Laudantium, harum libero debitis ea ipsam aliquid similique, accusamus reprehenderit neque molestiae earum dolorum necessitatibus exercitationem provident rem. Repellat perferendis eligendi autem? Aliquam corrupti pariatur assumenda ipsum cum dolor eaque non eveniet. Sunt cumque fugit nemo nesciunt sequi eligendi velit quisquam error aliquid impedit repudiandae libero, nostrum cum blanditiis, facere soluta culpa provident fugiat nisi numquam. Nostrum illum fuga, facere, eveniet commodi delectus at cupiditate beatae labore, deserunt error dolore tempore adipisci similique libero placeat? Consequuntur consectetur at distinctio, incidunt praesentium quas! Deserunt assumenda voluptates saepe fuga unde magni vitae voluptatem. Dolore et asperiores esse ipsam error placeat tempora doloribus. Corrupti libero dolore ab sint perspiciatis nulla deleniti eos unde, velit temporibus quisquam dolorem
+                                                reiciendis cum delectus id consectetur sed dignissimos consequuntur distinctio doloribus nam, maiores at odio! Temporibus dolorem vitae possimus qui repudiandae, deserunt velit vero assumenda odio suscipit distinctio beatae eum. Veritatis quos veniam, dolores exercitationem deleniti cumque ipsam nesciunt reprehenderit cupiditate, error saepe temporibus at molestias delectus.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="message__bottom">
+                                        <div class="toggle message-text__toggle text-s12-h14-w500">Развернуть</div>
+                                        <div class="date text-s12-h14-w400">14.09.21 в 20:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chose">
+                            <div class="chose__header">
+                                <div class="title text-s16-h22-w600">Выберите подходящий Вам день и время</div>
+                                <div class="available text-s13-h16-w400">
+                                    <span id="printPeriod">
+                                        Доступные даты
+                                        <span id="periodStartDay"></span> <span id="periodStartMounth"></span>
+                                        —
+                                        <span id="periodEndDay"></span> <span id="periodEndMounth"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="chose__item open-date-modal">
+                                <div class="title text-s13-h16-w400">Дата</div>
+                                <div class="value text-s15-h18-w400">
+                                    <span id="printValue">
+                                        <span class="value__date"></span>
+                                        <span class="value__mounth"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="chose__item open-time-modal">
+                                <div class="title text-s13-h16-w400">Время</div>
+                                <div class="value text-s15-h18-w400">
+                                    <span class="value__time">10:30</span>
+                                </div>
+                            </div>
+
+                            <div class="chose__current text-s14-h20-w400">
+                                Вы выбрали
+                                <span class="value">
+                                    <span id="printValue">
+                                        <span class="value__date"></span>
+                                        <span class="value__mounth"></span>, время начала <span class="value__time">10:30</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+
+        <script src="../../common/modules/scroll-modal/swiped-events.min.js"></script>
+        <script type="module" src="js/modalsInit.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <!-- календарь -->
+        <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+        <!-- русский язык для календаря -->
+
+        <script src="js/jquery.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
